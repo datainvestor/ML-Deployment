@@ -1,4 +1,6 @@
 import pathlib
+#this is new way of defining paths 
+#pipeline file is the heart of the package
 
 import numpy as np
 import pandas as pd
@@ -8,15 +10,16 @@ from sklearn.externals import joblib
 import pipeline
 
 
-PACKAGE_ROOT = pathlib.Path(__file__).resolve().parent
-TRAINED_MODEL_DIR = PACKAGE_ROOT / 'trained_models'
-DATASET_DIR = PACKAGE_ROOT / 'datasets'
+#directories that will be used be various functions
+PACKAGE_ROOT = pathlib.Path(__file__).resolve().parent #root folder
+TRAINED_MODEL_DIR = PACKAGE_ROOT / 'trained_models' #directory where w place our trained models
+DATASET_DIR = PACKAGE_ROOT / 'datasets' #specify where we find dataet direcotry
 
 TESTING_DATA_FILE = DATASET_DIR / 'test.csv'
 TRAINING_DATA_FILE = DATASET_DIR / 'train.csv'
 TARGET = 'SalePrice'
 
-
+#specifdy features that we are pulling from train.csv
 FEATURES = ['MSSubClass', 'MSZoning', 'Neighborhood', 'OverallQual',
             'OverallCond', 'YearRemodAdd', 'RoofStyle', 'MasVnrType',
             'BsmtQual', 'BsmtExposure', 'HeatingQC', 'CentralAir',
@@ -26,7 +29,7 @@ FEATURES = ['MSSubClass', 'MSZoning', 'Neighborhood', 'OverallQual',
             # this variable is only to calculate temporal variable:
             'YrSold']
 
-
+#this will persist the pipeline
 def save_pipeline(*, pipeline_to_persist) -> None:
     """Persist the pipeline."""
 
@@ -36,7 +39,7 @@ def save_pipeline(*, pipeline_to_persist) -> None:
 
     print('saved pipeline')
 
-
+#finction that will run train model
 def run_training() -> None:
     """Train the model."""
 
