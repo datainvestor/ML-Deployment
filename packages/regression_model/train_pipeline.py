@@ -29,7 +29,7 @@ FEATURES = ['MSSubClass', 'MSZoning', 'Neighborhood', 'OverallQual',
             # this variable is only to calculate temporal variable:
             'YrSold']
 
-#this will persist the pipeline
+#this will persist the pipeline and save to pkl file using joblib libary
 def save_pipeline(*, pipeline_to_persist) -> None:
     """Persist the pipeline."""
 
@@ -53,13 +53,13 @@ def run_training() -> None:
         test_size=0.1,
         random_state=0)  # we are setting the seed here
 
-    # transform the target
+    # transform the target, use log format because it is expected by the sklearn pipeline
     y_train = np.log(y_train)
     y_test = np.log(y_test)
 
     pipeline.price_pipe.fit(X_train[FEATURES],
                             y_train)
-
+    #after applying fit we save to pipeline
     save_pipeline(pipeline_to_persist=pipeline.price_pipe)
 
 

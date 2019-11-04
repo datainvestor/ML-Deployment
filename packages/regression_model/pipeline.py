@@ -33,6 +33,8 @@ CATEGORICAL_VARS = ['MSZoning', 'Neighborhood', 'RoofStyle', 'MasVnrType',
 
 
 #this is where we set in pipeline for the categorical imputer to run
+#each of the pipeline methods below represent preprocessing set
+
 price_pipe = Pipeline(
     [
         ('categorical_imputer',

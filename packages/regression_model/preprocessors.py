@@ -2,6 +2,8 @@ import numpy as np
 import pandas as pd
 from sklearn.base import BaseEstimator, TransformerMixin
 
+#all those processors follow the same structure fit and transform
+
 
 class CategoricalImputer(BaseEstimator, TransformerMixin):
     """Categorical data missing value imputer."""
