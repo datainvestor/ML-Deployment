@@ -1,5 +1,7 @@
 from sklearn.linear_model import Lasso
 from sklearn.pipeline import Pipeline
+#Pipeline from sklearn allows tyo define series of transfomrations and pre processing on the data
+
 from sklearn.preprocessing import MinMaxScaler
 
 from regression_model import preprocessors as pp
@@ -29,6 +31,9 @@ CATEGORICAL_VARS = ['MSZoning', 'Neighborhood', 'RoofStyle', 'MasVnrType',
                     'KitchenQual', 'FireplaceQu', 'GarageType', 'GarageFinish',
                     'PavedDrive']
 
+
+#this is where we set in pipeline for the categorical imputer to run
+#each of the pipeline methods below represent preprocessing set
 
 price_pipe = Pipeline(
     [
