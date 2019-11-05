@@ -1,16 +1,15 @@
 import pathlib
 #this is new way of defining paths 
 
-
 import regression_model
-
+#centralize path configs
 
 PACKAGE_ROOT = pathlib.Path(regression_model.__file__).resolve().parent #root folder
 TRAINED_MODEL_DIR = PACKAGE_ROOT / 'trained_models' #directory where w place our trained models
 DATASET_DIR = PACKAGE_ROOT / 'datasets' #specify where we find dataet direcotry
 
-TESTING_DATA_FILE = DATASET_DIR / 'test.csv'
-TRAINING_DATA_FILE = DATASET_DIR / 'train.csv'
+TESTING_DATA_FILE = 'test.csv'
+TRAINING_DATA_FILE = 'train.csv'
 TARGET = 'SalePrice'
 
 
