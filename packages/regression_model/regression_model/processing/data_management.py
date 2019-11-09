@@ -3,14 +3,14 @@ from sklearn.externals import joblib
 from sklearn.pipeline import Pipeline
 
 from regression_model.config import config
-
+#centralize loading and persistence functions
 
 def load_dataset(*, file_name: str
                  ) -> pd.DataFrame:
     _data = pd.read_csv(f'{config.DATASET_DIR}/{file_name}')
     return _data
 
-
+#this will persist the pipeline and save to pkl file using joblib libary
 def save_pipeline(*, pipeline_to_persist) -> None:
     """Persist the pipeline."""
 
