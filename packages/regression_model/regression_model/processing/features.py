@@ -2,7 +2,7 @@ import numpy as np
 from sklearn.base import BaseEstimator, TransformerMixin
 
 from regression_model.processing.errors import InvalidModelInputError
-
+#this was moved from preprocessing before as this is feature enginering function not preprocessing
 
 class LogTransformer(BaseEstimator, TransformerMixin):
     """Logarithm transformer."""
