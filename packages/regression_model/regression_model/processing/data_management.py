@@ -43,7 +43,7 @@ def load_pipeline(*, file_name: str
     trained_model = joblib.load(filename=file_path)
     return trained_model
 
-
+#this function was added so that it helps keeping only one pipeline file (useful when serving model)
 def remove_old_pipelines(*, files_to_keep) -> None:
     """
     Remove old model pipelines.
