@@ -9,10 +9,7 @@ wheel==0.32.3
 
 # testing requirements
 pytest==4.0.2
-<<<<<<< HEAD
-=======
 attrs==19.1.0
->>>>>>> c0b45d8f1b9c8e5724cc4e4f119e5c4a0b30f54c
 
 # fetching datasets
 kaggle==1.5.1.1
