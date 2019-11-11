@@ -6,13 +6,8 @@ from regression_model.processing.data_management import load_dataset
 
 def test_make_single_prediction():
     # Given
-<<<<<<< HEAD
     test_data = load_dataset(file_name='test.csv')
-    single_test_json = test_data[0:1]
-=======
-    test_data = load_dataset(file_name='test.csv') #load data
-    single_test_json = test_data[0:1].to_json(orient='records') #select single row from the csv
->>>>>>> 81ee3a74e194e1de412d505c14e5f154f8a5e987
+    single_test_json = test_data[0:1] #select single row from the csv
 
     # When
     subject = make_prediction(input_data=single_test_json)
