@@ -4,7 +4,7 @@ from sklearn.pipeline import Pipeline
 
 from regression_model.config import config
 from regression_model import __version__ as _version
-
+#centralize loading and persistence functions
 import logging
 import typing as t
 
@@ -17,7 +17,7 @@ def load_dataset(*, file_name: str
     _data = pd.read_csv(f'{config.DATASET_DIR}/{file_name}')
     return _data
 
-
+#this will persist the pipeline and save to pkl file using joblib libary
 def save_pipeline(*, pipeline_to_persist) -> None:
     """Persist the pipeline.
 
@@ -44,7 +44,7 @@ def load_pipeline(*, file_name: str
     trained_model = joblib.load(filename=file_path)
     return trained_model
 
-
+#this function was added so that it helps keeping only one pipeline file (useful when serving model)
 def remove_old_pipelines(*, files_to_keep: t.List[str]) -> None:
     """
     Remove old model pipelines.
