@@ -10,18 +10,18 @@ import logging
 
 
 _logger = logging.getLogger(__name__)
-
+#load pickle file- this is the pipeline
 pipeline_file_name = f'{config.PIPELINE_SAVE_FILE}{_version}.pkl'
 _price_pipe = load_pipeline(file_name=pipeline_file_name)
 
-
+#function that gets input data,
 def make_prediction(*, input_data) -> dict:
     """Make a prediction using the saved model pipeline."""
 
     data = pd.DataFrame(input_data)
     validated_data = validate_inputs(input_data=data)
-    prediction = _price_pipe.predict(validated_data[config.FEATURES])
-    output = np.exp(prediction)
+    prediction = _price_pipe.predict(validated_data[config.FEATURES]) #  use pipeline that we loaded above to make predictions so all the preprocessing functions will run on this data before
+    output = np.exp(prediction) #this will give prediciton at the end
 
     results = {'predictions': output, 'version': _version}
 

@@ -2,7 +2,7 @@ import numpy as np
 from sklearn.base import BaseEstimator, TransformerMixin
 
 from regression_model.processing.errors import InvalidModelInputError
-
+#this was moved from preprocessing before as this is feature enginering function not preprocessing
 
 class LogTransformer(BaseEstimator, TransformerMixin):
     """Logarithm transformer."""
@@ -23,6 +23,7 @@ class LogTransformer(BaseEstimator, TransformerMixin):
         # check that the values are non-negative for log transform
         if not (X[self.variables] > 0).all().all():
             vars_ = self.variables[(X[self.variables] <= 0).any()]
+            #this is used to show custom errors
             raise InvalidModelInputError(
                 f"Variables contain zero or negative values, "
                 f"can't apply log for vars: {vars_}")

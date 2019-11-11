@@ -8,11 +8,11 @@ from pathlib import Path
 from setuptools import find_packages, setup
 
 
-# Package meta-data.
+# Package meta-data. Here specify all the details
 NAME = 'regression_model'
 DESCRIPTION = 'Train and deploy regression model.'
-URL = 'your github project'
-EMAIL = 'your_email@email.com'
+URL = 'ML Deployment at github'
+EMAIL = 'atrinh@pm.me'
 AUTHOR = 'Your name'
 REQUIRES_PYTHON = '>=3.6.0'
 
