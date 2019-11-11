@@ -3,6 +3,7 @@ import pandas as pd
 from sklearn.base import BaseEstimator, TransformerMixin
 
 from regression_model.processing.errors import InvalidModelInputError
+#all those processors follow the same structure fit and transform
 
 
 class CategoricalImputer(BaseEstimator, TransformerMixin):
@@ -13,13 +14,13 @@ class CategoricalImputer(BaseEstimator, TransformerMixin):
             self.variables = [variables]
         else:
             self.variables = variables
-
+      #the fit method is needed for pipeline to run
     def fit(self, X: pd.DataFrame, y: pd.Series = None
             ) -> 'CategoricalImputer':
         """Fit statement to accomodate the sklearn pipeline."""
 
         return self
-
+    #fill NA in categorical data
     def transform(self, X: pd.DataFrame) -> pd.DataFrame:
         """Apply the transforms to the dataframe."""
 
