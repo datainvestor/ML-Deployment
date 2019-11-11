@@ -6,13 +6,13 @@ from regression_model.processing.data_management import (
     load_dataset, save_pipeline)
 from regression_model.config import config
 from regression_model import __version__ as _version
-
+#pipeline file is the heart of the package
 import logging
 
 
 _logger = logging.getLogger(__name__)
 
-
+#finction that will run train model
 def run_training() -> None:
     """Train the model."""
 
@@ -26,13 +26,13 @@ def run_training() -> None:
         test_size=0.1,
         random_state=0)  # we are setting the seed here
 
-    # transform the target
+    # transform the target, use log format because it is expected by the sklearn pipeline
     y_train = np.log(y_train)
     y_test = np.log(y_test)
 
     pipeline.price_pipe.fit(X_train[config.FEATURES],
                             y_train)
-
+    #after applying fit we save to pipeline
     _logger.info(f'saving model version: {_version}')
     save_pipeline(pipeline_to_persist=pipeline.price_pipe)
 
