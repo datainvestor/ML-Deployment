@@ -2,7 +2,7 @@ from regression_model.config import config
 
 import pandas as pd
 
-
+#another layer of checking that values that come to model are correct (like if there are still any nan vals)
 def validate_inputs(input_data: pd.DataFrame) -> pd.DataFrame:
     """Check model inputs for unprocessable values."""
 
