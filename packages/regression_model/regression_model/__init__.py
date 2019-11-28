@@ -11,6 +11,6 @@ logger.setLevel(logging.DEBUG)
 logger.addHandler(logging_config.get_console_handler())
 logger.propagate = False
 
-
+#this is good to save version in file name
 with open(os.path.join(config.PACKAGE_ROOT, 'VERSION')) as version_file:
     __version__ = version_file.read().strip()
