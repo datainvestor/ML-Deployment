@@ -126,4 +126,8 @@ packages/neural_network_model/neural_network_model/datasets/training_data_refere
 .DS_Store
 
 kaggle.json
+<<<<<<< HEAD
 packages/ml_api/uploads/*
+=======
+.vscode
+>>>>>>> 9900eb5c59dd8cdaa23d9b92ac16be2ebbea37e0
